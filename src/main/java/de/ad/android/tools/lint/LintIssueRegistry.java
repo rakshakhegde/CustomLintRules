@@ -1,4 +1,4 @@
-package is.uncommon.checks;
+package de.ad.android.tools.lint;
 
 import com.android.tools.lint.client.api.IssueRegistry;
 import com.android.tools.lint.detector.api.Issue;

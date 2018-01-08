@@ -32,3 +32,6 @@ jar {
         attributes 'Lint-Registry': 'de.ad.android.tools.lint.LintIssueRegistry'
     }
 }
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
