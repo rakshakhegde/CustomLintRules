@@ -7,18 +7,28 @@ repositories {
     maven {
         url  'https://dl.bintray.com/android/android-tools'
     }
+    maven { url 'https://maven.google.com' }
 }
 
+ext.versions = [
+    androidTools: '26.0.0',
+]
+
 dependencies {
-    compile 'com.android.tools.lint:lint-api:24.5.0'
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.0.0'
     testCompile 'com.android.tools.lint:lint-tests:24.5.0'
+
+    compile "com.android.tools.lint:lint-api:$versions.androidTools"
+    compile "com.android.tools.lint:lint-checks:$versions.androidTools"
+
+    testCompile "com.android.tools.lint:lint:${versions.androidTools}"
+    testCompile "com.android.tools.lint:lint-tests:${versions.androidTools}"
 }
 
 jar {
     archiveName 'lint.jar'
     manifest {
-        attributes 'Lint-Registry': 'de.ad.android.tools.lint.CustomIssueRegistry'
+        attributes 'Lint-Registry': 'de.ad.android.tools.lint.LintIssueRegistry'
     }
 }
