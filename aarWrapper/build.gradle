@@ -35,9 +35,7 @@ android {
 project.afterEvaluate {
   def compileLint = project.tasks.getByPath(':aarWrapper:compileLint')
   compileLint.dependsOn parent.tasks.getByName("jar")
-  println('in afterEvaluate')
   compileLint.doLast {
-    println('in doLast')
     copy {
       from '../build/libs'
       into 'build/intermediates/lint'
