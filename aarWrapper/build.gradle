@@ -34,13 +34,18 @@ project.afterEvaluate {
   println('in afterEvaluate')
   compileLint.doLast {
     println('in doLast')
-    copy{
+    copy {
       from '../build/libs'
       into 'build/intermediates/lint'
     }
   }
 }
 
-task install {
-  assemble
+assemble.doLast {
+  copy {
+    from('build/outputs/aar') {
+      include '*-release.aar'
+    }
+    into System.getenv('HOME') + '/.m2/repository/'
+  }
 }
