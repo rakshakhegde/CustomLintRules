@@ -46,6 +46,6 @@ assemble.doLast {
     from('build/outputs/aar') {
       include '*-release.aar'
     }
-    into System.getenv('HOME') + '/.m2/repository/com/github/rakshakhegde/'
+    into System.getenv('HOME') + '/.m2/repository/com/github/rakshakhegde/aarWrapper'
   }
 }
