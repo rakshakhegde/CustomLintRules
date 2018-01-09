@@ -4,20 +4,16 @@ version = '1.0.0'
 
 repositories {
     jcenter()
-    maven {
-        url  'https://dl.bintray.com/android/android-tools'
-    }
-    maven { url 'https://maven.google.com' }
+    google()
 }
 
 ext.versions = [
-    androidTools: '26.0.0',
+    androidTools: '26.0.1',
 ]
 
 dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.0.0'
-    testCompile 'com.android.tools.lint:lint-tests:24.5.0'
 
     compile "com.android.tools.lint:lint-api:$versions.androidTools"
     compile "com.android.tools.lint:lint-checks:$versions.androidTools"
